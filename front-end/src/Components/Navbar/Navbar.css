@@ -5,13 +5,13 @@
     box-shadow: 0 1px 3px -2px black;
 }
 
-.nav-logo{
+.nav_logo{
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.nav-logo p{
+.nav_logo p{
     color: red;
     font-size: 34px;
     font-weight: 600;

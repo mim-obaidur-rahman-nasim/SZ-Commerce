@@ -48,3 +48,14 @@
     font-size: 22px;
     font-weight: 500;
 }
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* .hero-right img {
+    width: 100%;
+  } */
