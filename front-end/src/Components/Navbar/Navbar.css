@@ -1,23 +1,25 @@
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding: 16px;
     box-shadow: 0 1px 3px -2px black;
+    flex-wrap: wrap;
 }
 
-.nav_logo{
+.nav_logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.nav_logo p{
+.nav_logo p {
     color: red;
     font-size: 34px;
     font-weight: 600;
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
@@ -27,7 +29,7 @@
     font-weight: 500;
 }
 
-.nav-menu li{
+.nav-menu li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,7 +38,7 @@
     cursor: pointer;
 }
 
-.nav-menu hr{
+.nav-menu hr {
     border: none;
     width: 80%;
     height: 3px;
@@ -44,13 +46,14 @@
     background: #FF4141;
 }
 
-.nav-login-cart{
+.nav-login-cart {
     display: flex;
     align-items: center;
     gap: 45px;
+    position: relative;
 }
 
-.nav-login-cart button{
+.nav-login-cart button {
     width: 157px;
     height: 58px;
     outline: none;
@@ -63,19 +66,57 @@
     cursor: pointer;
 }
 
-.nav-login-cart button:active{
+.nav-login-cart button:active {
     background: #f3f3f3;
 }
 
-.nav-cart-count{
+.nav-cart-count {
     width: 22px;
     height: 22px;
     display: flex;
     justify-content: center;
-    margin-top: -35px;
-    margin-left: -55px;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    right: -15px;
     border-radius: 11px;
     font-size: 14px;
     background: red;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 8px;
+    }
+
+    .nav_logo p {
+        font-size: 28px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .nav-login-cart {
+        margin-top: 15px;
+        gap: 15px;
+    }
+
+    .nav-login-cart button {
+        width: 120px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .nav-cart-count {
+        top: -5px;
+        right: -15px;
+        font-size: 12px;
+        width: 18px;
+        height: 18px;
+    }
 }

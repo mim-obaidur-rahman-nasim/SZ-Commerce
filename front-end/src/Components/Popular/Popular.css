@@ -4,6 +4,8 @@
     align-items: center;
     gap: 10px;
     height: 90vh;
+    padding-top: 50px;
+    padding-bottom: 520px;
 }
 
 .popular h1 {
@@ -23,5 +25,61 @@
     padding: 10px;
     margin-top: 50px;
     display: flex;
-    gap: 30px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    .popular {
+        padding-top: 200px;
+        padding-bottom: 500px;
+    }
+    .popular h1 {
+        font-size: 40px;
+    }
+
+    .popular hr {
+        width: 15%;
+    }
+
+    .popular-item {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .popular {
+        height: auto;
+        padding: 20px;
+    }
+
+    .popular h1 {
+        font-size: 30px;
+    }
+
+    .popular hr {
+        width: 20%;
+        height: 4px;
+    }
+
+    .popular-item {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popular h1 {
+        font-size: 24px;
+    }
+
+    .popular hr {
+        width: 30%;
+        height: 3px;
+    }
+
+    .popular-item {
+        margin-top: 500px;
+        gap: 10px;
+    }
 }
