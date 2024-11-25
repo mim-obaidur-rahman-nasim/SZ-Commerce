@@ -5,7 +5,7 @@
     margin: auto;
     padding: 0px 140px;
     margin-bottom: 150px;
-    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+    background: linear-gradient(180deg, #e1e8ff, #e1ffea22 60%);
 }
 
 .offers-left {
@@ -45,5 +45,5 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-top: 50px;
+    padding-top: 80px;
 }
