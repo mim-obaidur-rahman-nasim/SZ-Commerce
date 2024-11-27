@@ -4,7 +4,7 @@
     align-items: center;
     gap: 10px;
     height: 90vh;
-    padding-bottom: 1100px;
+    padding-bottom: 500px;
 }
 
 .new-collections h1 {
@@ -27,6 +27,11 @@
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
+}
+@media (max-width: 1440px) {
+    .new-collections{
+        padding-bottom: 1100px;
+    }
 }
 
 @media (max-width: 1024px) {

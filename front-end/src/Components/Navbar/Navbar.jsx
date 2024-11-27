@@ -8,7 +8,7 @@ const Navbar = () => {
 
     const [menu,setMenu] = useState("shop");
   return (
-    <div className='navbar'>
+    <div className='navbar'> 
         <div className="nav_logo">
             <img src={logo} alt="" />
             <p>EasyMart.bd</p>
