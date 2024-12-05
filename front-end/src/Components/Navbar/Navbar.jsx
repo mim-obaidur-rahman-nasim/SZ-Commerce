@@ -4,18 +4,28 @@ import { Link } from 'react-router-dom';
 import logo from '../Assets/logo.png'
 import cart_icon from '../Assets/cart_icon.png'
 import { ShopContext } from '../../Context/ShopContext';
+import nav_dropdown from '../Assets/nav_dropdown.png'
 
 const Navbar = () => {
 
     const [menu,setMenu] = useState("shop");
     const {getTotalCartItems} = React.useContext(ShopContext);
+    const menuRef = React.useRef();
+
+    const dropdown_toggle = (e) => {
+        menuRef.current.classList.toggle('nav-menu-visible');
+        e.target.classList.toggle('open');
+    }
+
+
   return (
     <div className='navbar'>
         <div className="nav_logo">
             <img src={logo} alt="" />
             <p>SZ-Commerce</p>
         </div>
-        <ul className="nav-menu">
+        <img className='nav-dropdown' onClick={dropdown_toggle} src={nav_dropdown} alt="" />
+        <ul ref={menuRef} className="nav-menu">
             <li onClick={()=>{setMenu("shop")}}> <Link style={{textDecoration: 'none'}} to='/'>Home </Link>{menu==="shop"?<hr/>:<></>}</li>
             <li onClick={()=>{setMenu("men")}}><Link style={{textDecoration: 'none'}} to='/mens'>Men </Link>{menu==="men"?<hr/>:<></>}</li>
             <li onClick={()=>{setMenu("women")}}><Link style={{textDecoration: 'none'}} to='/womens'>Women </Link>{menu==="women"?<hr/>:<></>}</li>
