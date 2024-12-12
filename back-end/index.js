@@ -108,6 +108,23 @@ app.post("/addproduct", async (req, res) => {
   });
 });
 
+//Creating API for delete product
+app.post('/removeproduct' , async (req , res) => {
+  await Product.findOneAndDelete({id : req.body.id});
+  console.log("Removed");
+  res.json({
+    success : true,
+    name: req.body.name
+  })
+})
+
+//All products
+app.get("/allproducts", async (req, res) => {
+  let products = await Product.find({});
+  console.log("All products fetched"); 
+  res.send(products);
+});
+
 app.listen(port, (error) => {
   if (!error) {
     console.log("Server running on port" + port);
