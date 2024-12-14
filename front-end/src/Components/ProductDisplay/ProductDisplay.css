@@ -103,6 +103,12 @@
     font-weight: 600;
 }
 
+.selected-size {
+    border: 2px solid #ff4141;
+    background-color: #ffecec;
+}
+
+
 @media(max-width: 1280px){
     .productdisplay{
         margin: 0px 60px;
