@@ -1,0 +1,77 @@
+.list-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 740px;
+  padding: 10px 50px;
+  margin: 30px;
+  border-radius: 6px;
+  background: white;
+}
+
+.listreview-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 3fr 1fr 1fr 1fr;
+  gap: 50px;
+  padding: 20px 0px;
+  align-items: center;
+  color: #454545;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.listreview-body {
+  overflow-y: auto;
+}
+
+.listreview-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 3fr 1fr 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  padding: 20px 50px;
+  border-bottom: 1px solid #ddd;
+  color: #454545;
+  font-weight: 500;
+}
+
+.listreview-product-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.listreview-remove-icon {
+  cursor: pointer;
+  margin: auto;
+  transition: transform 0.2s ease;
+}
+
+.listreview-remove-icon:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 800px) {
+  .list-review {
+    box-sizing: border-box;
+    width: 95%;
+    height: 100%;
+    padding: 10px 30px;
+    margin: 20px auto;
+  }
+  .listreview-header {
+    padding: 15px 0px;
+    color: #454545;
+    font-size: 12px;
+  }
+  .listreview-item {
+    padding: 15px 0;
+    font-size: 12px;
+  }
+  .listreview-product-image {
+    width: 40px;
+    height: 40px;
+  }
+}

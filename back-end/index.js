@@ -261,50 +261,9 @@ app.post("/addtocart", fetchUser, async (req, res) => {
   ); 
   res.send("Added");
 });
-// app.post("/addtocart", fetchUser, async (req, res) => {
-//   console.log("Added", req.body.itemId, req.body.size);
-//   let userData = await Users.findOne({ _id: req.user.id });
-//   let itemIndex = userData.cartData.findIndex(
-//     (item) => item.itemId === req.body.itemId && item.size === req.body.size
-//   );
-
-//   userData.cartData[itemIndex].quantity += 1;
-
-//   await Users.findOneAndUpdate(
-//     { _id: req.user.id },
-//     { cartData: userData.cartData }
-//   );
-//   res.send("Added");
-// });
 
 
-// app.post("/addtocart", fetchUser, async (req, res) => {
-//   console.log("Added", req.body.itemId, req.body.size);
 
-//   let userData = await Users.findOne({ _id: req.user.id });
-//   let itemIndex = userData.cartData.findIndex(
-//     item => item.itemId === req.body.itemId && item.size === req.body.size
-//   );
-
-//   if (itemIndex > -1) {
-//     // If item with the selected size exists, increment quantity
-//     userData.cartData[itemIndex].quantity += 1;
-//   } else {
-//     // If item with the selected size does not exist, add it to the cart
-//     userData.cartData.push({
-//       itemId: req.body.itemId,
-//       size: req.body.size,
-//       quantity: 1,
-//     });
-//   }
-
-//   await Users.findOneAndUpdate(
-//     { _id: req.user.id },
-//     { cartData: userData.cartData }
-//   );
-
-//   res.send("Added");
-// });
 
 //Creating endpoint for removing product in cartdata
 app.post("/removefromcart", fetchUser, async (req, res) => {
@@ -399,5 +358,35 @@ app.post("/addreview", fetchUser, async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error adding review" });
+  }
+});
+
+
+// Fetch all reviews
+app.get("/reviews", async (req, res) => {
+  try {
+    const reviews = await Review.find(); // Fetch all reviews
+    res.json({ reviews });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error fetching reviews" });
+  }
+});
+
+
+
+// Delete review by ID
+app.delete("/review/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = await Review.findByIdAndDelete(id); 
+    if (result) {
+      res.json({ success: true, message: "Review deleted successfully" });
+    } else {
+      res.status(404).json({ error: "Review not found" });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error deleting review" });
   }
 });
