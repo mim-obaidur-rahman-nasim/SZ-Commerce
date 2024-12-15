@@ -1,0 +1,125 @@
+/* Base styles */
+.office-page {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Center content horizontally */
+    justify-content: center;  /* Center content vertically */
+    padding: 20px;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;            /* Make the container take full height */
+}
+
+.office-page h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.office-page p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;       /* Center-align text */
+    margin-bottom: 20px;
+}
+
+.office-page ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 18px;
+    width: 100%;
+    max-width: 800px;         /* Restrict the width of the list */
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Center-align the list items */
+}
+
+.office-page ul li {
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;              /* Ensure the list items take full width */
+    text-align: center;       /* Center text inside each list item */
+}
+
+.office-page ul li h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.office-page ul li p {
+    font-size: 16px;
+}
+
+/* Large screens (1200px and above) */
+@media (max-width: 1200px) {
+    .office-page {
+        padding: 40px;
+    }
+
+    .office-page h1 {
+        font-size: 32px;
+    }
+
+    .office-page p {
+        font-size: 20px;
+    }
+
+    .office-page ul li h3 {
+        font-size: 22px;
+    }
+
+    .office-page ul li p {
+        font-size: 18px;
+    }
+}
+
+/* Medium screens (800px and below) */
+@media (max-width: 800px) {
+    .office-page {
+        padding: 30px;
+    }
+
+    .office-page h1 {
+        font-size: 28px;
+    }
+
+    .office-page p {
+        font-size: 18px;
+    }
+
+    .office-page ul li h3 {
+        font-size: 20px;
+    }
+
+    .office-page ul li p {
+        font-size: 16px;
+    }
+}
+
+/* Small screens (500px and below) */
+@media (max-width: 500px) {
+    .office-page {
+        padding: 15px;
+    }
+
+    .office-page h1 {
+        font-size: 24px;
+    }
+
+    .office-page p {
+        font-size: 16px;
+    }
+
+    .office-page ul li h3 {
+        font-size: 18px;
+    }
+
+    .office-page ul li p {
+        font-size: 14px;
+    }
+}

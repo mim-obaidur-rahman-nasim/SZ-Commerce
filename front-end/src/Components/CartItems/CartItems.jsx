@@ -162,6 +162,7 @@ const CartItems = () => {
       <div className="cartitems-format-main">
         <p>Products</p>
         <p>Title</p>
+        {/* <p>Size</p> */}
         <p>Price</p>
         <p>Quantity</p>
         <p>Total</p>
@@ -213,13 +214,13 @@ const CartItems = () => {
           </div>
           <button onClick={() => setShowModal(true)}>Proceed To Checkout</button>
         </div>
-        <div className="cartitems-promocode">
+        {/* <div className="cartitems-promocode">
           <p>If you have a promo code, Enter it here</p>
           <div className="cartitems-promobox">
             <input type="text" placeholder="Promo Code" />
             <button>Submit</button>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Modal for payment */}

@@ -108,6 +108,29 @@
     background-color: #ffecec;
 }
 
+/* Default style for all sizes */
+.productdisplay-size {
+    padding: 18px 24px;
+    background: #fbfbfb;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Hover effect */
+  .productdisplay-size:hover {
+    background: #f1f1f1;
+  }
+  
+  /* Style for the selected size */
+  .selected-size {
+    border: 2px solid #ff4141;
+    background-color: #ffecec;
+    color: #ff4141; /* Optional: Change text color for better visibility */
+  }
+  
+
 
 @media(max-width: 1280px){
     .productdisplay{

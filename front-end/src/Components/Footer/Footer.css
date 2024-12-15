@@ -30,6 +30,16 @@
     cursor: pointer;
 }
 
+.footer-links li a {
+    text-decoration: none;  
+    color: black;           
+}
+
+.footer-links li a:hover {
+    color: #b33333;        
+}
+
+
 .footer-social-icon {
     display: flex;
     gap: 20px;

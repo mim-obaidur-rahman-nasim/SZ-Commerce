@@ -1,0 +1,113 @@
+/* Base styles */
+.company-page {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Center content horizontally */
+    justify-content: center;  /* Center content vertically */
+    padding: 20px;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;            /* Make the container take full height */
+}
+
+.company-page h1 {
+    font-size: 36px;
+    color: #d84321;
+    margin-bottom: 10px;
+}
+
+.company-page p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;       /* Center-align text */
+}
+
+.company-page h2 {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #d84321;
+    text-align: center;       /* Center-align text */
+}
+
+.company-page ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 18px;
+    text-align: center;       /* Center-align list */
+}
+
+.company-page ul li {
+    margin-bottom: 10px;
+}
+
+/* Large screens (1200px and above) */
+@media (max-width: 1200px) {
+    .company-page {
+        padding: 40px;
+    }
+
+    .company-page h1 {
+        font-size: 32px;
+    }
+
+    .company-page p {
+        font-size: 20px;
+    }
+
+    .company-page h2 {
+        font-size: 24px;
+    }
+
+    .company-page ul li {
+        font-size: 20px;
+    }
+}
+
+/* Medium screens (800px and below) */
+@media (max-width: 800px) {
+    .company-page {
+        padding: 30px;
+    }
+
+    .company-page h1 {
+        font-size: 28px;
+    }
+
+    .company-page p {
+        font-size: 18px;
+    }
+
+    .company-page h2 {
+        font-size: 22px;
+    }
+
+    .company-page ul li {
+        font-size: 18px;
+    }
+}
+
+/* Small screens (500px and below) */
+@media (max-width: 500px) {
+    .company-page {
+        padding: 15px;
+    }
+
+    .company-page h1 {
+        font-size: 24px;
+    }
+
+    .company-page p {
+        font-size: 16px;
+    }
+
+    .company-page h2 {
+        font-size: 20px;
+    }
+
+    .company-page ul li {
+        font-size: 16px;
+    }
+}

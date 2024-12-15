@@ -251,29 +251,60 @@ const fetchUser = (req, res, next) => {
 };
 
 //Creating endpoint for adding product in cartdata
-app.post("/addtocart", fetchUser, async (req, res) => {
-  console.log("Added", req.body.itemId, req.body.size);  
-  let userData = await Users.findOne({ _id: req.user.id });
-  let itemIndex = userData.cartData.findIndex(
-    item => item.itemId === req.body.itemId && item.size === req.body.size
-  );
-  if (itemIndex !== -1) {
-    userData.cartData[itemIndex].quantity += 1;
-  } else {
-    userData.cartData.push({
-      itemId: req.body.itemId,
-      size: req.body.size,
-      quantity: 1,
-    });
-  }
 
+app.post("/addtocart", fetchUser, async (req, res) => {
+  let userData = await Users.findOne({ _id: req.user.id });
+  userData.cartData[req.body.itemId] += 1;
   await Users.findOneAndUpdate(
     { _id: req.user.id },
     { cartData: userData.cartData }
-  );
+  ); 
   res.send("Added");
 });
+// app.post("/addtocart", fetchUser, async (req, res) => {
+//   console.log("Added", req.body.itemId, req.body.size);
+//   let userData = await Users.findOne({ _id: req.user.id });
+//   let itemIndex = userData.cartData.findIndex(
+//     (item) => item.itemId === req.body.itemId && item.size === req.body.size
+//   );
 
+//   userData.cartData[itemIndex].quantity += 1;
+
+//   await Users.findOneAndUpdate(
+//     { _id: req.user.id },
+//     { cartData: userData.cartData }
+//   );
+//   res.send("Added");
+// });
+
+
+// app.post("/addtocart", fetchUser, async (req, res) => {
+//   console.log("Added", req.body.itemId, req.body.size);
+
+//   let userData = await Users.findOne({ _id: req.user.id });
+//   let itemIndex = userData.cartData.findIndex(
+//     item => item.itemId === req.body.itemId && item.size === req.body.size
+//   );
+
+//   if (itemIndex > -1) {
+//     // If item with the selected size exists, increment quantity
+//     userData.cartData[itemIndex].quantity += 1;
+//   } else {
+//     // If item with the selected size does not exist, add it to the cart
+//     userData.cartData.push({
+//       itemId: req.body.itemId,
+//       size: req.body.size,
+//       quantity: 1,
+//     });
+//   }
+
+//   await Users.findOneAndUpdate(
+//     { _id: req.user.id },
+//     { cartData: userData.cartData }
+//   );
+
+//   res.send("Added");
+// });
 
 //Creating endpoint for removing product in cartdata
 app.post("/removefromcart", fetchUser, async (req, res) => {
@@ -308,7 +339,6 @@ app.get("/product/:id", async (req, res) => {
   }
 });
 
-
 // Review model
 const Review = mongoose.model("Review", {
   productId: {
@@ -331,7 +361,6 @@ const Review = mongoose.model("Review", {
   },
 });
 
-
 // Fetch reviews for a product
 app.get("/reviews/:productId", async (req, res) => {
   const { productId } = req.params;
@@ -344,14 +373,14 @@ app.get("/reviews/:productId", async (req, res) => {
   }
 });
 
-
-
 // Submit review
 app.post("/addreview", fetchUser, async (req, res) => {
   const { productId, reviewText, rating } = req.body;
 
   if (!productId || !reviewText || !rating) {
-    return res.status(400).json({ error: "Product ID, review text, and rating are required" });
+    return res
+      .status(400)
+      .json({ error: "Product ID, review text, and rating are required" });
   }
 
   if (rating < 1 || rating > 5) {
